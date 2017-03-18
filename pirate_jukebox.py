@@ -18,8 +18,6 @@ CTRL+C to quit
 ------------------------------
 """)
 
-
-
 # this is where the music lives
 music_dir = './music/'
 music_is_paused = 0
@@ -48,7 +46,6 @@ def play_song(song):
 
     # remember we have muisc
     global music_playing
-    print(music_playing)
     music_playing = song
 
 
@@ -66,8 +63,6 @@ try:
         ## Fast Forward Button
         @phatbeat.on(phatbeat.BTN_FASTFWD)
         def fast_forward(pin):
-            print("FF Pressed")
-
             play_random_song()
             time.sleep(1)
 
@@ -76,16 +71,13 @@ try:
         def play_pause(pin):
 
             global music_playing
-
-
+            global music_is_paused
 
             if(music_playing == ''):
                 play_random_song()
                 time.sleep(1)
 
-            global music_is_paused
-
-            print pygame.mixer.music.get_busy()
+            pygame.mixer.music.get_busy()
 
             if (music_is_paused == 0):
                 pygame.mixer.music.pause()
