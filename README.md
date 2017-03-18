@@ -6,7 +6,7 @@ My 6 year old son wanted a way to listen to music in his room and I felt a full 
 
 ## Requirements:
 
-This script requires Python 3 and Pygame.
+This script requires Python 3, Pygame and Pimoroni's PhatBeat Library
 
 To install Python 3 and Pygame follow these directions:
 
@@ -22,6 +22,10 @@ $ sudo apt-get install python3-dev python3-numpy
 $ python3 setup.py build 
 $ sudo python3 setup.py install
 ```
+
+Instructions to install Pimoroni's PhatBeat library are here:
+
+https://github.com/pimoroni/phat-beat (be sure to install the Python 3 version)
 
 ## Time to Jam!
 
