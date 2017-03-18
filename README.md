@@ -1,5 +1,6 @@
 # Pi-JukeBox
-A simple MP3 player for my Raspberry Pi
+
+A simple MP3 player for Pimoroni's Pirate Radio kit for the Raspberry Pi Zero W.
 
 This is a personal project to play random MP3 files from a directory using a python script with simple button controls via GPIO. The \_working file does work at the moment but is kinda Janky. Obviously no MP3 files are included because copyright is a pain in the bum.
 
@@ -7,7 +8,8 @@ This script requires Python 3 and Pygame.
 
 To install Python 3 and Pygame follow these directions:
 
-```$ sudo apt-get install mercurial 
+```
+$ sudo apt-get install mercurial 
 $ hg clone https://bitbucket.org/pygame/pygame
 $ cd pygame
 
@@ -16,4 +18,7 @@ $ sudo apt-get install libsmpeg-dev libportmidi-dev libavformat-dev libswscale-d
 $ sudo apt-get install python3-dev python3-numpy
 
 $ python3 setup.py build 
-$ sudo python3 setup.py install```
+$ sudo python3 setup.py install
+```
+
+
