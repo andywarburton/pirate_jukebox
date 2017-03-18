@@ -40,9 +40,13 @@ http://www.instructables.com/id/Raspberry-Pi-Launch-Python-script-on-startup/?AL
 ## Controls
 
 FFWD: Play another song at random
+
 Play/Pause: Does what it says on the tin
+
 RRWD: Go back to the start of the current song
+
 VOL UP: Does what it says on the tin
+
 VOL DOWN: Tin, does what says on it.
 
 ## Thanks!
