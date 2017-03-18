@@ -1,0 +1,5 @@
+# exclude everything
+music/*
+
+# exception to the rule
+!music/.gitkeep 
