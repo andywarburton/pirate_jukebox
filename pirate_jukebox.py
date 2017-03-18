@@ -50,29 +50,40 @@ def play_song(song):
 
     print(song)
 
-def play_random_song():
+def play_random_song(old_song = False):
+
     song = random.choice(files)
     song = music_dir + song
+
+    ## this hacky little loops prevent the same song being
+    ## played twice in a row! (its fugly but it works!)
+    ## you may want to remove this if you only have one song!
+    if(old_song):
+        while True:
+            if(old_song == song):
+                print("No Dupes please, we're British!")
+                song = random.choice(files)
+                song = music_dir + song
+            else:
+                break
+
     play_song(song)
+
 
 ## buttons wot do stuff
 
 ## Fast Forward Button
 @phatbeat.on(phatbeat.BTN_FASTFWD)
 def fast_forward(pin):
-    play_random_song()
+    global music_playing
+    play_random_song(music_playing)
     time.sleep(1)
 
 ## Play / Pause Button
 @phatbeat.on(phatbeat.BTN_PLAYPAUSE)
 def play_pause(pin):
 
-    global music_playing
     global music_is_paused
-
-    if(music_playing == 0):
-        play_random_song()
-        time.sleep(1)
 
     if (music_is_paused == 0):
         pygame.mixer.music.pause()
