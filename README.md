@@ -20,5 +20,7 @@ $ sudo apt-get install python3-dev python3-numpy
 $ python3 setup.py build 
 $ sudo python3 setup.py install
 ```
+Once this is up and running you can run the script with
 
+`sudo python ./pirate_jukebox.py`
 
