@@ -4,7 +4,6 @@
 import os, random
 import pygame
 import time
-import RPi.GPIO as GPIO
 from sys import exit
 import signal
 import phatbeat
