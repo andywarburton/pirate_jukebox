@@ -21,13 +21,14 @@ CTRL+C to quit
 music_dir = './music/'
 music_is_paused = 0
 music_playing = 0
+song = 0
 
 # get the music thing going
 pygame.init()
 pygame.mixer.pre_init(44100, -16, 2, 2048) # setup mixer to avoid sound lag
 pygame.mixer.init()
-pygame.mixer.music.set_volume(0.5)
-volume = 0.5
+volume = 0.2
+pygame.mixer.music.set_volume(volume)
 
 # get list of files in music_dir
 files = [ f for f in os.listdir(music_dir) if os.path.isfile(os.path.join(music_dir,f)) and f.endswith('.mp3') ]
