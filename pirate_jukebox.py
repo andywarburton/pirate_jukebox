@@ -33,6 +33,9 @@ pygame.mixer.music.set_volume(volume)
 # get list of files in music_dir
 files = [ f for f in os.listdir(music_dir) if os.path.isfile(os.path.join(music_dir,f)) and f.endswith('.mp3') ]
 
+# make a copy of files for preventing dupes
+playlist = files[:]
+
 # this function gets a random song from the
 # music directory and plays it
 
@@ -50,24 +53,18 @@ def play_song(song):
 
     print(song)
 
-def play_random_song(old_song = False):
+def play_random_song():
 
-    song = random.choice(files)
-    song = music_dir + song
+    global playlist
+    global files
 
-    ## this hacky little loops prevent the same song being
-    ## played twice in a row! (its fugly but it works!)
-    ## you may want to remove this if you only have one song!
-    if(old_song):
-        while True:
-            if(old_song == song):
-                print("No Dupes please, we're British!")
-                song = random.choice(files)
-                song = music_dir + song
-            else:
-                break
-
-    play_song(song)
+    ## if playlist is empty, we need to repopulate
+    if len(playlist) == 0:
+        playlist = files[:]
+    else:
+        song = random.choice(playlist)
+        playlist.remove(song)
+        play_song(music_dir + song)
 
 
 ## buttons wot do stuff
@@ -76,7 +73,7 @@ def play_random_song(old_song = False):
 @phatbeat.on(phatbeat.BTN_FASTFWD)
 def fast_forward(pin):
     global music_playing
-    play_random_song(music_playing)
+    play_random_song()
     time.sleep(1)
 
 ## Play / Pause Button
